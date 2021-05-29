@@ -1,13 +1,13 @@
-package scratches.boot.template;
+package scratches.boot.mongodb.fts;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TemplateApplication {
+public class FullTextSearchApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(TemplateApplication.class, args);
+        SpringApplication.run(FullTextSearchApplication.class, args);
     }
 
 }

@@ -8,18 +8,19 @@
         <version>2.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>scratches.boot</groupId>
-    <artifactId>template</artifactId>
+    <groupId>scratches.boot.mongodb</groupId>
+    <artifactId>full-text-search</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>template</name>
-    <description>Demo project for Spring Boot</description>
+    <name>Spring Data MongoDB: Full Text Search</name>
+    <description>Implement MongoDB Full Text Search with Spring Data MongoDB</description>
     <properties>
         <java.version>11</java.version>
+        <testcontainers.version>1.15.3</testcontainers.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
         </dependency>
 
         <dependency>
@@ -32,7 +33,29 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.testcontainers</groupId>
+            <artifactId>mongodb</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.testcontainers</groupId>
+                <artifactId>testcontainers-bom</artifactId>
+                <version>${testcontainers.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>
